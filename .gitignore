@@ -1,0 +1,11 @@
+# neovim
+.config/nvim/plugin/packer_compiled.lua
+
+# pywal
+.cache/wal/colors*
+.cache/wal/sequences
+.cache/wal/wal
+
+# zsh
+.config/zsh/.zcompdump
+.config/zsh/plugins

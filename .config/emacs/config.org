@@ -1,0 +1,59 @@
+* Preferences
+#+begin_src emacs-lisp
+  (setq-default
+   auto-save-list-file-prefix nil      ; Prevent tracking for auto-saves
+   make-backup-files          nil
+   auto-save-default          nil
+   create-lockfiles           nil
+   help-window-select         t        ; Focus new help windows when opened
+   delete-by-moving-to-trash  t        ; Delete files to Trash ($HOME/.local/share/Trash)
+   uniquify-buffer-name-style 'forward ; Uniquify buffer names
+   sentence-end-double-space  nil      ; Use a single space after dots
+   mouse-yank-at-point        t        ; Yank at point rather than pointer
+   x-select-enable-clipboard  t        ; After copying in X11, paste by `yank'
+   x-select-enable-primary    t        ; After mouse highlighting in X11, paste by `yank'
+   )
+
+  (when window-system (global-hl-line-mode 1))
+  (when window-system (global-prettify-symbols-mode 1))
+  (fset 'yes-or-no-p 'y-or-n-p)        ; Replace yes/no prompts with y/n
+
+  (recentf-mode            1)
+  (save-place-mode         1)          ; Remember and restore the last cursor position of opened files.
+  (show-paren-mode         1)
+  (line-number-mode        1)
+  (column-number-mode      1)
+  (electric-pair-mode      1)
+  (global-subword-mode     1)          ; Iterate through CamelCase words.
+  (delete-selection-mode   1)          ; Replace highlighted region when inserting text.
+  (global-auto-revert-mode 1)          ; Revert buffers when the underlying file has changed.
+
+  ;; Save what you enter into minibuffer prompts.
+  (setq history-length 25)
+  (savehist-mode 1)
+
+  ;; Run at full power please.
+  (put 'upcase-region             'disabled nil)
+  (put 'downcase-region           'disabled nil)
+  (put 'narrow-to-region          'disabled nil)
+  (put 'narrow-to-page            'disabled nil)
+  (put 'erase-buffer              'disabled nil)
+  (put 'scroll-left               'disabled nil)
+  (put 'dired-find-alternate-file 'disabled nil)
+
+  (setq-default
+   scroll-conservatively 10)
+#+end_src
+
+* Org Mode
+** Basic Config
+#+begin_src emacs-lisp
+  (setq
+   org-startup-folded      t
+   org-src-window-setup    'current-window
+   org-hide-leading-stars  t
+
+   ;; Org Link
+   org-return-follows-link t
+   )
+#+end_src

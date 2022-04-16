@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/void/xdg-user-dirs/Pictures/wallpapers/random/0033.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#10191b",
+        "foreground": "#f4ddcc",
+        "cursor": "#f4ddcc"
+    },
+    "colors": {
+        "color0": "#10191b",
+        "color1": "#E79970",
+        "color2": "#386385",
+        "color3": "#747686",
+        "color4": "#937787",
+        "color5": "#A98B8A",
+        "color6": "#F0AF91",
+        "color7": "#f4ddcc",
+        "color8": "#aa9a8e",
+        "color9": "#E79970",
+        "color10": "#386385",
+        "color11": "#747686",
+        "color12": "#937787",
+        "color13": "#A98B8A",
+        "color14": "#F0AF91",
+        "color15": "#f4ddcc"
+    }
+}

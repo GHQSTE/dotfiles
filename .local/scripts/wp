@@ -1,0 +1,2 @@
+#!/bin/sh
+find ~/xdg-user-dirs/Pictures/wallpapers -type f | shuf | nsxiv -

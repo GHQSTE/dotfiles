@@ -1,0 +1,3 @@
+#!/bin/sh
+wall=$(find "$HOME"/xdg-user-dirs/Pictures/wallpapers/random -type f | shuf -n 1)
+xwallpaper --clear --zoom "$wall" && wal -i "$wall" -stn > /dev/null && xdotool key --clearmodifiers super+F5
