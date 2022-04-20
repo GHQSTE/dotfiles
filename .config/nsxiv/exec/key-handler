@@ -40,6 +40,6 @@ do
     "C-c")  xclip -selection clipboard -target image/png "$file" ;;
     "C-u")  printf "%s" "$file" | xclip -selection clipboard ;;
     "C-k")  trash-put "$file" ;; # uses trash-cli program
-    "C-n")  xwallpaper --clear --zoom "$file" & wal -i "$file" -stn > /dev/null && xdotool key --clearmodifiers super+F5 ;;
+    "C-n")  xwallpaper --zoom "$file" & wal -stn -i "$file" > /dev/null && xdotool key --clearmodifiers super+F5 ;;
   esac
 done
