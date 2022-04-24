@@ -1,3 +1,10 @@
+# emacs
+.config/emacs/config.el
+.config/emacs/elpa/
+.config/emacs/history
+.config/emacs/places
+.config/emacs/recentf
+
 # neovim
 .config/nvim/plugin/packer_compiled.lua
 
