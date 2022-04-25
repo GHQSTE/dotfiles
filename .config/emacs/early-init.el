@@ -3,6 +3,7 @@
 (setq
  gc-cons-threshold                      most-positive-fixnum
  native-comp-deferred-compilation       nil
+ package-enable-at-startup              nil
  inhibit-compacting-font-caches         t
  mode-line-format                       nil
  frame-inhibit-implied-resize           t

@@ -1,31 +1,18 @@
 ;; -*- lexical-binding: t; -*-
 
-;; <leaf-install-code>
-(eval-and-compile
-  (customize-set-variable
-   'package-archives
-   '(("melpa" . "https://melpa.org/packages/")
-     ("gnu" . "https://elpa.gnu.org/packages/")
-     ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-  (package-initialize)
-  (unless (package-installed-p 'leaf)
-    (package-refresh-contents)
-    (package-install 'leaf))
+;; use-package ----
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
 
-  (leaf leaf-keywords
-    :ensure t
-    :init
-    ;; optional packages if you want to use :hydra, :el-get, :blackout,,,
-    (leaf hydra :ensure t)
-    (leaf el-get :ensure t)
-    (leaf blackout :ensure t)
+(package-initialize)
 
-    :config
-    ;; initialize leaf-keywords.el
-    (leaf-keywords-init)))
-;; </leaf-install-code>
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+;; use-package ----
 
-(leaf try
+(use-package try
   :ensure t)
 
 ;; This is the actual config file.
@@ -53,7 +40,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(marginalia orderless savehist vertico doom-modeline all-the-icons doom-themes rainbow-delimiters rainbow-mode try blackout el-get hydra leaf-keywords leaf)))
+   '(marginalia orderless vertico rainbow-delimiters rainbow-mode doom-themes doom-modeline all-the-icons try use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
