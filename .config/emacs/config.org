@@ -174,7 +174,7 @@
   (leaf marginalia
     :ensure t
     ;; Either bind `marginalia-cycle` globally or only in the minibuffer
-    ;:bind (("M-A" . marginalia-cycle)
+    :bind (("M-A" . marginalia-cycle))
     ;       :map minibuffer-local-map
     ;       ("M-A" . marginalia-cycle))
 
@@ -184,4 +184,18 @@
     ;; Must be in the :init section of use-package such that the mode gets
     ;; enabled right away. Note that this forces loading the package.
     (marginalia-mode))
+#+end_src
+
+* File Manager
+** Dired
+#+begin_src emacs-lisp
+  (setq
+   dired-recursive-copies 'always
+   dired-recursive-deletes 'always
+   dired-kill-when-opening-new-dired-buffer t
+   dired-listing-switches "-lAh --group-directories-first"
+   dired-dwim-target t
+   )
+
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
 #+end_src
