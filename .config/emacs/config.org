@@ -109,6 +109,23 @@
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 #+end_src
 
+** undo-tree
+#+begin_src emacs-lisp
+  (use-package undo-tree
+    :ensure t
+    :init
+    (global-undo-tree-mode))
+#+end_src
+
+** goggles
+#+begin_src emacs-lisp
+  (use-package goggles
+    :ensure t
+    :hook ((prog-mode text-mode) . goggles-mode)
+    :config
+    (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
+#+end_src
+
 * File Manager
 ** DIRED
 #+begin_src emacs-lisp
@@ -199,4 +216,138 @@
     ;; Must be in the :init section of use-package such that the mode gets
     ;; enabled right away. Note that this forces loading the package.
     (marginalia-mode))
+#+end_src
+
+* Navigation
+** avy
+#+begin_src emacs-lisp
+  (use-package avy
+    :ensure t)
+
+  (global-set-key (kbd "C-:") 'avy-goto-char)
+  (global-set-key (kbd "C-'") 'avy-goto-char-2)
+  (global-set-key (kbd "C-c C-z") 'avy-goto-char-timer)
+  (global-set-key (kbd "M-g f") 'avy-goto-line)
+#+end_src
+
+* Window & Frame Management
+** custom functions
+#+begin_src emacs-lisp
+  (defun split-and-follow-horizontally ()
+    (interactive)
+    (split-window-below)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+  (defun split-and-follow-vertically ()
+    (interactive)
+    (split-window-right)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+#+end_src
+
+** switch-window
+#+begin_src emacs-lisp
+  (use-package switch-window
+    :ensure t
+    :config
+    (setq switch-window-input-style 'minibuffer)
+    (setq switch-window-increase 4)
+    (setq switch-window-threshold 2)
+    (setq switch-window-shortcut-style 'qwerty)
+    (setq switch-window-qwerty-shortcuts
+	  '("a" "r" "s" "t" "g" "m" "n" "e" "i" "o"))
+    :bind
+    ([remap other-window] . switch-window))
+#+end_src
+
+* Buffer
+** custom functions
+#+begin_src emacs-lisp
+  ;; Always murder current buffer.
+  ;; Doing C-x k should kill the current buffer at all times,
+  ;; we have ibuffer for more sophisticated thing.
+  (defun kill-current-buffer ()
+    "Kills the current buffer."
+    (interactive)
+    (kill-buffer (current-buffer)))
+  (global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+  ;; Kill buffers without asking for confirmation
+  (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+  ;; Turn switch-to-buffer into ibuffer
+  (global-set-key (kbd "C-x b") 'ibuffer)
+
+  ;; If you feel like you know how ibuffer works and need not to be asked for
+  ;; confirmation after every serious command, enable this as follows.
+  (setq ibuffer-expert t)
+
+  ;; close-all-buffers
+  (defun close-all-buffers ()
+    "Kill all buffers without regard for their origin."
+    (interactive)
+    (mapc 'kill-buffer (buffer-list)))
+  (global-set-key (kbd "C-M-s-k") 'close-all-buffers)
+#+end_src
+
+* Editing
+** custom functions
+#+begin_src emacs-lisp
+  ;; Kill word
+  (defun daedreth/kill-inner-word ()
+    "Kills the entire word your cursor is in. Equivalent to 'ciw' in vim."
+    (interactive)
+    (forward-char 1)
+    (backward-word)
+    (kill-word 1))
+  (global-set-key (kbd "C-c c w") 'daedreth/kill-inner-word)
+
+  ;; copy word
+  (defun daedreth/copy-whole-word ()
+    (interactive)
+    (save-excursion
+      (forward-char 1)
+      (backward-word)
+      (kill-word 1)
+      (yank)))
+  (global-set-key (kbd "C-c y w") 'daedreth/copy-whole-word)
+
+  ;; copy a line
+  (defun daedreth/copy-whole-line ()
+    "Copies a line without regard for cursor position."
+    (interactive)
+    (save-excursion
+      (kill-new
+       (buffer-substring
+	(point-at-bol)
+	(point-at-eol)))))
+  (global-set-key (kbd "C-c y y") 'daedreth/copy-whole-line)
+
+  ;; kill a line
+  (global-set-key (kbd "C-c d d") 'kill-whole-line)
+#+end_src
+
+** kill-ring
+*** popup-killring
+#+begin_src emacs-lisp
+  (use-package popup-kill-ring
+    :ensure t
+    :bind ("M-y" . popup-kill-ring))
+
+  (setq kill-ring-max 100)
+#+end_src
+
+* Version Control
+** magit
+#+begin_src emacs-lisp
+  (use-package magit
+    :ensure t
+    :config
+    (setq magit-push-always-verify nil)
+    (setq git-commit-summary-max-length 50)
+    :bind
+    ("C-c m" . magit-status))
 #+end_src

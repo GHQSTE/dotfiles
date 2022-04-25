@@ -5,7 +5,6 @@
  native-comp-deferred-compilation       nil
  package-enable-at-startup              nil
  inhibit-compacting-font-caches         t
- mode-line-format                       nil
  frame-inhibit-implied-resize           t
  frame-resize-pixelwise                 t
  inhibit-startup-screen                 t
