@@ -4,6 +4,8 @@
 .config/emacs/history
 .config/emacs/places
 .config/emacs/recentf
+.config/emacs/transient/
+.config/emacs/.init.el.~undo-tree~
 
 # neovim
 .config/nvim/plugin/packer_compiled.lua
