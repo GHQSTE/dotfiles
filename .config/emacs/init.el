@@ -44,7 +44,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(treemacs switch-window consult try use-package)))
+ '(package-selected-packages
+   '(consult marginalia orderless vertico goggles undo-tree rainbow-delimiters rainbow-mode switch-window avy doom-modeline all-the-icons doom-themes try use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

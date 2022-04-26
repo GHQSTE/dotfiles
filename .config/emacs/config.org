@@ -72,15 +72,6 @@
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
 #+end_src
 
-** treemacs
-#+begin_src emacs-lisp
-  (use-package treemacs
-    :ensure t)
-
-  (global-set-key (kbd "C-c t") 'treemacs)
-  (global-set-key (kbd "C-c o") 'treemacs-select-window)
-#+end_src
-
 * Theme
 ** doom-themes
 #+begin_src emacs-lisp
