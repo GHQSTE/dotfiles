@@ -6,6 +6,8 @@
 .config/emacs/recentf
 .config/emacs/transient/
 .config/emacs/.init.el.~undo-tree~
+.config/emacs/.config.org.~undo-tree~
+.config/emacs/.early-init.el.~undo-tree~
 
 # neovim
 .config/nvim/plugin/packer_compiled.lua
