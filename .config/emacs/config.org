@@ -7,11 +7,11 @@
    create-lockfiles           nil
    help-window-select         t        ; Focus new help windows when opened
    delete-by-moving-to-trash  t        ; Delete files to Trash ($HOME/.local/share/Trash)
-   uniquify-buffer-name-style 'forward ; Uniquify buffer names
    sentence-end-double-space  nil      ; Use a single space after dots
    mouse-yank-at-point        t        ; Yank at point rather than pointer
    x-select-enable-clipboard  t        ; After copying in X11, paste by `yank'
    x-select-enable-primary    t        ; After mouse highlighting in X11, paste by `yank'
+   indent-tabs-mode           nil
    )
 
   (when window-system (global-hl-line-mode 1))
@@ -42,7 +42,23 @@
   (put 'dired-find-alternate-file 'disabled nil)
 
   (setq-default
-   scroll-conservatively 10)
+   scroll-conservatively 100)
+
+  (require 'uniquify)
+  (setq uniquify-buffer-name-style 'forward)
+
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+  (setq ibuffer-expert t)
+
+  ;; Kill buffers without asking for confirmation
+  (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+  (global-set-key (kbd "M-z") 'zap-up-to-char)
+
+  (global-set-key (kbd "C-s")   'isearch-forward-regexp)
+  (global-set-key (kbd "C-r")   'isearch-backward-regexp)
+  (global-set-key (kbd "C-M-s") 'isearch-forward)
+  (global-set-key (kbd "C-M-r") 'isearch-backward)
 #+end_src
 
 * Org-mode
@@ -165,16 +181,6 @@
     (kill-buffer (current-buffer)))
   (global-set-key (kbd "C-x k") 'kill-current-buffer)
 
-  ;; Kill buffers without asking for confirmation
-  (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
-
-  ;; Turn switch-to-buffer into ibuffer
-  (global-set-key (kbd "C-x C-b") 'ibuffer)
-
-  ;; If you feel like you know how ibuffer works and need not to be asked for
-  ;; confirmation after every serious command, enable this as follows.
-  (setq ibuffer-expert t)
-
   ;; close-all-buffers
   (defun close-all-buffers ()
     "Kill all buffers without regard for their origin."
@@ -270,12 +276,6 @@
     ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
     ;; (setq vertico-cycle t)
     )
-
-  ;; Persist history over Emacs restarts. Vertico sorts by history position.
-  (use-package savehist
-    :ensure t
-    :init
-    (savehist-mode))
 
   ;; A few more useful configurations...
   (use-package emacs
