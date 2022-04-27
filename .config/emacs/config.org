@@ -1,5 +1,5 @@
 * Preferences
-#+begin_src emacs-lisp
+#+begin_src elisp
   (setq-default
    auto-save-list-file-prefix nil      ; Prevent tracking for auto-saves
    make-backup-files          nil
@@ -63,7 +63,7 @@
 
 * Org-mode
 ** Config
-#+begin_src emacs-lisp
+#+begin_src elisp
   (setq
    org-startup-folded      t
    org-src-window-setup    'current-window
@@ -74,9 +74,30 @@
    )
 #+end_src
 
+** org-roam
+#+begin_src elisp
+  (use-package org-roam
+    :ensure t
+    :custom
+    (org-roam-directory (file-truename "~/xdg-user-dirs/Documents/org-roam"))
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+           ("C-c n f" . org-roam-node-find)
+           ("C-c n g" . org-roam-graph)
+           ("C-c n i" . org-roam-node-insert)
+           ("C-c n c" . org-roam-capture)
+           ;; Dailies
+           ("C-c n j" . org-roam-dailies-capture-today))
+    :config
+    ;; If you're using a vertical completion framework, you might want a more informative completion interface
+    (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+    (org-roam-db-autosync-mode)
+    ;; If using org-roam-protocol
+    (require 'org-roam-protocol))
+#+end_src
+
 * File Manager
 ** DIRED
-#+begin_src emacs-lisp
+#+begin_src elisp
   (setq
    dired-recursive-copies 'always
    dired-recursive-deletes 'always
@@ -90,7 +111,7 @@
 
 * Theme
 ** doom-themes
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package doom-themes
     :ensure t
     :config
@@ -112,14 +133,14 @@
 
 * Appearence
 ** all-the-icons
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package all-the-icons
     :ensure t
     :if (display-graphic-p))
 #+end_src
 
 ** doom-modeline
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package doom-modeline
     :ensure t
     :init (doom-modeline-mode 1))
@@ -127,7 +148,7 @@
 
 * Navigation
 ** avy
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package avy
     :ensure t)
 
@@ -139,7 +160,7 @@
 
 * Window & Frame Management
 ** Custom Functions
-#+begin_src emacs-lisp
+#+begin_src elisp
   ;; Following window splits
   (defun split-and-follow-horizontally ()
     (interactive)
@@ -157,7 +178,7 @@
 #+end_src
 
 ** switch-window
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package switch-window
     :ensure t
     :config
@@ -173,7 +194,7 @@
 
 * Buffer(s)
 ** Custom Functions
-#+begin_src emacs-lisp
+#+begin_src elisp
   ;; Always murder current buffer
   (defun kill-current-buffer ()
     "Kills the current buffer."
@@ -191,7 +212,7 @@
 
 * Editing
 ** Custom Functions
-#+begin_src emacs-lisp
+#+begin_src elisp
   (defun daedreth/kill-inner-word ()
     "Kills the entire word your cursor is in. Equivalent to 'ciw' in vim."
     (interactive)
@@ -226,7 +247,7 @@
 
 * Visualize
 ** rainbow-mode
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package rainbow-mode
     :ensure t
     :init
@@ -239,7 +260,7 @@
 #+end_src
 
 ** undo-tree
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package undo-tree
     :ensure t
     :init
@@ -247,7 +268,7 @@
 #+end_src
 
 ** goggles
-#+begin_src emacs-lisp
+#+begin_src elisp
   (use-package goggles
     :ensure t
     :hook ((prog-mode text-mode) . goggles-mode)
@@ -257,7 +278,7 @@
 
 * Minibuffer
 ** vertico, savehist, emacs, orderless, & marginalia
-#+begin_src emacs-lisp
+#+begin_src elisp
   ;; Enable vertico
   (use-package vertico
     :ensure t
@@ -328,7 +349,7 @@
 #+end_src
 
 ** consult
-#+begin_src emacs-lisp
+#+begin_src elisp
   ;; Example configuration for Consult
   (use-package consult
     :ensure t

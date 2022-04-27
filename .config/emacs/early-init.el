@@ -72,4 +72,4 @@
 (push '(vertical-scroll-bars)         default-frame-alist)
 (push '(font . "JetBrains Mono-11")   default-frame-alist)
 
-;; early-init.el ends here.
+;;; early-init.el ends here.
