@@ -106,6 +106,9 @@
 #+end_src
 
 * Org-mode
+
+~m-x~ org-customize
+
 ** org-customize
 #+begin_src elisp
   (setq
