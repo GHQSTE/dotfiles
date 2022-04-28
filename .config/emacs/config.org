@@ -127,8 +127,8 @@
    org-hide-emphasis-markers  nil
 
    ;; Org Link
-   org-return-follows-link    t
    org-descriptive-links      t
+   org-return-follows-link    t
    )
 
   (global-set-key (kbd "C-c o o") 'org-toggle-link-display)
