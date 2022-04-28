@@ -157,7 +157,7 @@
 
 | =dired= | built-in |
 
-** Dired
+** dired
 #+begin_src elisp
   (setq
    dired-recursive-copies 'always
