@@ -238,10 +238,10 @@
 #+end_src
 
 * Editing
-** Custom Functions
 
 | =zzz-to-char= | https://github.com/mrkkrp/zzz-to-char |
 
+** Custom Functions
 #+begin_src elisp
   (defun daedreth/kill-inner-word ()
     "Kills the entire word your cursor is in. Equivalent to 'ciw' in vim."
