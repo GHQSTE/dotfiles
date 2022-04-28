@@ -270,6 +270,11 @@
 #+end_src
 
 * Visualize
+
+| =rainbow-mode= | https://elpa.gnu.org/packages/rainbow-mode.html |
+| =undo-tree=    | https://www.dr-qubit.org/undo-tree.html         |
+| =goggles=      | https://github.com/minad/goggles                |
+
 ** rainbow-mode
 #+begin_src elisp
   (use-package rainbow-mode
