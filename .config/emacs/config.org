@@ -89,7 +89,7 @@
 * Appearence
 
 | =all-the-icons= | https://github.com/domtronn/all-the-icons.el |
-| =doom-modeline= | https://github.com/seagle0128/doom-modeline |
+| =doom-modeline= | https://github.com/seagle0128/doom-modeline  |
 
 ** all-the-icons
 #+begin_src elisp
@@ -106,16 +106,20 @@
 #+end_src
 
 * Org-mode
-** Config
+** org-customize
 #+begin_src elisp
   (setq
    org-startup-folded         t
    org-src-window-setup       'current-window
    org-ellipsis               "_"
+
    ;; Babel
    org-confirm-babel-evaluate nil
+
    ;; Org Appearence
    org-hide-leading-stars     t
+   org-pretty-entities        t
+   org-hide-emphasis-markers  t
 
    ;; Org Link
    org-return-follows-link    t
