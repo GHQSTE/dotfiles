@@ -112,7 +112,7 @@
 
 ** Config
 #+begin_src elisp
-  ;; `M-x org-customize'
+  ;; M-x `org-customize'
   (setq
    org-startup-folded         t
    org-src-window-setup       'current-window
