@@ -63,7 +63,7 @@
 
 * Theme
 
-| =doom-themes= | https://github.com/doomemacs/themes |
+| [[https://github.com/doomemacs/themes][doom-themes]] |  A megapack of themes for GNU Emacs. |
 
 ** doom-themes
 #+begin_src elisp
@@ -88,8 +88,8 @@
 
 * Appearence
 
-| =all-the-icons= | https://github.com/domtronn/all-the-icons.el |
-| =doom-modeline= | https://github.com/seagle0128/doom-modeline  |
+| [[https://github.com/domtronn/all-the-icons.el][all-the-icons]] | A utility package to collect various Icon Fonts and propertize them within Emacs. |
+| [[https://github.com/seagle0128/doom-modeline][doom-modeline]] | A fancy and fast mode-line inspired by minimalism design.                         |
 
 ** all-the-icons
 #+begin_src elisp
@@ -107,8 +107,8 @@
 
 * Org-mode
 
-| =org-mode= | built-in                             |
-| =org-roam= | https://github.com/org-roam/org-roam |
+| [[https://orgmode.org/][org-mode]] | Your life in plain text                |
+| [[https://github.com/org-roam/org-roam][org-roam]] | Rudimentary Roam replica with Org-mode |
 
 ~M-x org-customize~
 
@@ -172,7 +172,7 @@
 
 * Navigation
 
-| =avy= | https://github.com/abo-abo/avy |
+| [[https://github.com/abo-abo/avy][avy]] |  Jump to things in Emacs tree-style |
 
 ** avy
 #+begin_src elisp
