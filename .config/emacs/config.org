@@ -197,6 +197,9 @@
 #+end_src
 
 * Window & Frame Management
+
+| [[https://github.com/cyrus-and/zoom][zoom]] | Fixed and automatic balanced window layout for Emacs |
+
 ** Custom Functions
 #+begin_src elisp
   ;; Following window splits
@@ -215,19 +218,12 @@
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 #+end_src
 
-** switch-window
+** zoom
 #+begin_src elisp
-  (use-package switch-window
+  (use-package zoom
     :ensure t
-    :config
-    (setq switch-window-input-style 'minibuffer)
-    (setq switch-window-increase 4)
-    (setq switch-window-threshold 2)
-    (setq switch-window-shortcut-style 'qwerty)
-    (setq switch-window-qwerty-shortcuts
-	  '("n" "e" "i" "o"))
-    :bind
-    ([remap other-window] . switch-window))
+    :init
+    (zoom-mode 1))
 #+end_src
 
 * Buffer(s)
@@ -336,8 +332,40 @@
     (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
 #+end_src
 
-* Minibuffer
-** vertico, savehist, emacs, orderless, & marginalia
+* Interface Enhancement
+** Helpful
+#+begin_src elisp
+  (use-package helpful
+    :ensure t)
+
+  ;; Note that the built-in `describe-function' includes both functions
+  ;; and macros. `helpful-function' is functions only, so we provide
+  ;; `helpful-callable' as a drop-in replacement.
+  (global-set-key (kbd "C-h f") #'helpful-callable)
+
+  (global-set-key (kbd "C-h v") #'helpful-variable)
+  (global-set-key (kbd "C-h k") #'helpful-key)
+
+  ;; Lookup the current symbol at point. C-c C-d is a common keybinding
+  ;; for this in lisp modes.
+  (global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
+  ;; Look up *F*unctions (excludes macros).
+  ;;
+  ;; By default, C-h F is bound to `Info-goto-emacs-command-node'. Helpful
+  ;; already links to the manual, if a function is referenced there.
+  (global-set-key (kbd "C-h F") #'helpful-function)
+
+  ;; Look up *C*ommands.
+  ;;
+  ;; By default, C-h C is bound to describe `describe-coding-system'. I
+  ;; don't find this very useful, but it's frequently useful to only
+  ;; look at interactive functions.
+  (global-set-key (kbd "C-h C") #'helpful-command)
+#+end_src
+
+** Minibuffer
+*** vertico, savehist, emacs, orderless, & marginalia
 #+begin_src elisp
   ;; Enable vertico
   (use-package vertico
@@ -408,7 +436,7 @@
     (marginalia-mode))
 #+end_src
 
-** consult
+*** consult
 #+begin_src elisp
   ;; Example configuration for Consult
   (use-package consult
