@@ -107,7 +107,7 @@
 
 * Org-mode
 
-~m-x~ org-customize
+~M-x org-customize~
 
 ** org-customize
 #+begin_src elisp
