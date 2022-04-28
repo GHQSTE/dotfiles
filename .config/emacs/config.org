@@ -62,7 +62,9 @@
 #+end_src
 
 * Theme
+
 | =doom-themes= | https://github.com/doomemacs/themes |
+
 ** doom-themes
 #+begin_src elisp
   (use-package doom-themes
@@ -85,8 +87,10 @@
 #+end_src
 
 * Appearence
+
 | =all-the-icons= | https://github.com/domtronn/all-the-icons.el |
 | =doom-modeline= | https://github.com/seagle0128/doom-modeline |
+
 ** all-the-icons
 #+begin_src elisp
   (use-package all-the-icons
