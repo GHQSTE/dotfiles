@@ -107,6 +107,9 @@
 
 * Org-mode
 
+| =org-mode= | built-in                             |
+| =org-roam= | https://github.com/org-roam/org-roam |
+
 ~M-x org-customize~
 
 ** org-customize
@@ -122,7 +125,7 @@
    ;; Org Appearence
    org-hide-leading-stars     t
    org-pretty-entities        t
-   org-hide-emphasis-markers  t
+   org-hide-emphasis-markers  nil
 
    ;; Org Link
    org-return-follows-link    t
