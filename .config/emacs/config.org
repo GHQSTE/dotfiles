@@ -282,6 +282,11 @@
     :bind
     ("M-z" . zzz-up-to-char)
     ("M-Z" . zzz-to-char))
+
+  (setq zzz-to-char-reach 100)
+
+  ;; (global-set-key (kbd "M-z") 'zzz-up-to-char)
+  ;; (global-set-key (kbd "M-Z") 'zzz-to-char)
 #+end_src
 
 * Visualize
