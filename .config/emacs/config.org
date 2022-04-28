@@ -109,7 +109,7 @@
 
 | [[https://orgmode.org/][org-mode]]   | Your life in plain text                |
 | [[https://github.com/org-roam/org-roam][org-roam]]   | Rudimentary Roam replica with Org-mode |
-| [[https://github.com/minad/org-modern][org-modern]] | unicorn Modern Org Style                      |
+| [[https://github.com/minad/org-modern][org-modern]] | Modern Org Style                       |
 
 ** Config
 #+begin_src elisp
