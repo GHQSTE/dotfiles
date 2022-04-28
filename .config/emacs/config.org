@@ -110,10 +110,9 @@
 | [[https://orgmode.org/][org-mode]] | Your life in plain text                |
 | [[https://github.com/org-roam/org-roam][org-roam]] | Rudimentary Roam replica with Org-mode |
 
-~M-x org-customize~
-
-** org-customize
+** Config
 #+begin_src elisp
+  ;; M-x org-customize
   (setq
    org-startup-folded         t
    org-src-window-setup       'current-window
@@ -129,7 +128,10 @@
 
    ;; Org Link
    org-return-follows-link    t
+   org-descriptive-links      t
    )
+
+  (global-set-key (kbd "C-c o o") 'org-toggle-link-display)
 #+end_src
 
 ** org-roam
