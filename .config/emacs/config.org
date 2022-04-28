@@ -239,6 +239,9 @@
 
 * Editing
 ** Custom Functions
+
+| =zzz-to-char= | https://github.com/mrkkrp/zzz-to-char |
+
 #+begin_src elisp
   (defun daedreth/kill-inner-word ()
     "Kills the entire word your cursor is in. Equivalent to 'ciw' in vim."
@@ -270,6 +273,15 @@
 
   ;; kill a line
   (global-set-key (kbd "C-c d d") 'kill-whole-line)
+#+end_src
+
+** zzz-to-char
+#+begin_src elisp
+  (use-package zzz-to-char
+    :ensure t
+    :bind
+    ("M-z" . zzz-up-to-char)
+    ("M-Z" . zzz-to-char))
 #+end_src
 
 * Visualize
