@@ -239,7 +239,7 @@
 
 * Editing
 
-| =zzz-to-char= | https://github.com/mrkkrp/zzz-to-char |
+| ~ [[*zzz-to-char]] ~ | https://github.com/mrkkrp/zzz-to-char |
 
 ** Custom Functions
 #+begin_src elisp
