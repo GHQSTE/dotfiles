@@ -155,7 +155,7 @@
 
 * File Manager
 
-| Dired | built-in |
+| =Dired= | built-in |
 
 ** Dired
 #+begin_src elisp
