@@ -107,8 +107,9 @@
 
 * Org-mode
 
-| [[https://orgmode.org/][org-mode]] | Your life in plain text                |
-| [[https://github.com/org-roam/org-roam][org-roam]] | Rudimentary Roam replica with Org-mode |
+| [[https://orgmode.org/][org-mode]]   | Your life in plain text                |
+| [[https://github.com/org-roam/org-roam][org-roam]]   | Rudimentary Roam replica with Org-mode |
+| [[https://github.com/minad/org-modern][org-modern]] | Modern Org Style                       |
 
 ** Config
 #+begin_src elisp
@@ -153,6 +154,14 @@
     (org-roam-db-autosync-mode)
     ;; If using org-roam-protocol
     (require 'org-roam-protocol))
+#+end_src
+
+** org-modern
+#+begin_src elisp
+  (use-package org-modern
+    :ensure t
+    :init
+    (global-org-modern-mode))
 #+end_src
 
 * File Manager
