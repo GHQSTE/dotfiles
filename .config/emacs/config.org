@@ -154,7 +154,10 @@
 #+end_src
 
 * File Manager
-** DIRED
+
+| Dired | built-in |
+
+** Dired
 #+begin_src elisp
   (setq
    dired-recursive-copies 'always
