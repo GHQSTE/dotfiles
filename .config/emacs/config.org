@@ -557,6 +557,9 @@
 #+end_src
 
 * Key-bindings
+
+| [[https://github.com/emacs-evil/evil][evil]] |  The extensible vi layer for Emacs. |
+
 ** EVIL
 #+begin_src elisp
   (use-package evil
@@ -564,6 +567,9 @@
 #+end_src
 
 * Version Control
+
+| [[https://github.com/magit/magit][magit]] | It's Magit! A Git porcelain inside Emacs. |
+
 ** magit
 #+begin_src elisp
   (use-package magit
