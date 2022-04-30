@@ -303,8 +303,9 @@
 
 * Visualize
 
-| [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]] | Colorize color names in buffers    |
-| [[https://github.com/minad/goggles][goggles]]      | goggles.el - Pulse modified region |
+| [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]]       | Colorize color names in buffers    |
+| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode.     |
+| [[https://github.com/minad/goggles][goggles]]            | goggles.el - Pulse modified region |
 
 ** rainbow-mode
 #+begin_src elisp
@@ -312,7 +313,10 @@
     :ensure t
     :init
     (add-hook 'prog-mode-hook 'rainbow-mode))
+#+end_src
 
+** rainbow-delimiters
+#+begin_src elisp
   (use-package rainbow-delimiters
     :ensure t
     :init
