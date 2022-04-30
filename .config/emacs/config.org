@@ -304,7 +304,6 @@
 * Visualize
 
 | [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]] | Colorize color names in buffers    |
-| [[https://elpa.gnu.org/packages/undo-tree.html][undo-tree]]    | Treat undo history as a tree       |
 | [[https://github.com/minad/goggles][goggles]]      | goggles.el - Pulse modified region |
 
 ** rainbow-mode
@@ -318,14 +317,6 @@
     :ensure t
     :init
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
-#+end_src
-
-** undo-tree
-#+begin_src elisp
-  (use-package undo-tree
-    :ensure t
-    :init
-    (global-undo-tree-mode))
 #+end_src
 
 ** goggles
@@ -563,4 +554,18 @@
     ;;;; 4. locate-dominating-file
     ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
     )
+#+end_src
+
+* Key-bindings
+** EVIL
+#+begin_src elisp
+  (use-package evil
+    :ensure t)
+#+end_src
+
+* Version Control
+** magit
+#+begin_src elisp
+  (use-package magit
+    :ensure t)
 #+end_src

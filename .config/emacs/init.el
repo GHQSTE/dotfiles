@@ -1,7 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
 ;; use-package ----
 (require 'package)
 (add-to-list 'package-archives
@@ -12,6 +10,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 ;; use-package ----
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file t)
 
 (use-package try
   :ensure t)
