@@ -305,7 +305,7 @@
 
 | [[https://github.com/Malabarba/beacon][beacon]]             | A light that follows your cursor around so you don't lose it! |
 | [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]]       | Colorize color names in buffers                               |
-| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode.                                |
+| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode                                 |
 | [[https://github.com/minad/goggles][goggles]]            | goggles.el - Pulse modified region                            |
 
 ** beacon
