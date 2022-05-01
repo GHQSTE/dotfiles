@@ -4,4 +4,4 @@
 #+end_quote
 
 * emacs
-[[./config/emacs/config.org]]
+[[file:.config/emacs/config.org][dotemacs]]
