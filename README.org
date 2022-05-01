@@ -1,7 +1,7 @@
-* Table of contents
+** Table of contents
 #+begin_quote
 - [[#emacs][emacs]]
 #+end_quote
 
-* emacs
+** emacs
 [[file:.config/emacs/config.org][dotemacs]]
