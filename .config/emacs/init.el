@@ -3,7 +3,7 @@
 ;; use-package ----
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -16,6 +16,15 @@
 
 (use-package try
   :ensure t)
+
+;; Don’t compact font caches during GC.
+(setq inhibit-compacting-font-caches t)
+
+;; Garbage-collect on focus-out, emacs should feel snappier overall.
+(add-function :after after-focus-change-function
+              (defun me/garbage-collect-maybe ()
+                (unless (frame-focus-state)
+                  (garbage-collect))))
 
 ;; This is the actual config file.
 ;; It is omitted if it doesn't exist so emacs won't refuse to launch.
@@ -34,11 +43,5 @@
   (interactive)
   (org-babel-load-file (expand-file-name "~/.config/emacs/config.org")))
 (global-set-key (kbd "C-c r") 'config-reload)
-
-;; Garbage-collect on focus-out, emacs should feel snappier overall.
-(add-function :after after-focus-change-function
-              (defun me/garbage-collect-maybe ()
-                (unless (frame-focus-state)
-                  (garbage-collect))))
 
 ;; init.el ends here.

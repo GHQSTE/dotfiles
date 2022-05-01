@@ -4,7 +4,6 @@
  gc-cons-threshold                      most-positive-fixnum
  native-comp-deferred-compilation       nil
  package-enable-at-startup              nil
- inhibit-compacting-font-caches         t
  frame-inhibit-implied-resize           t
  frame-resize-pixelwise                 t
  inhibit-startup-screen                 t

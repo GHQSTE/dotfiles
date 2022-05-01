@@ -582,6 +582,15 @@
     :ensure t)
 #+end_src
 
+* Key cheat sheet
+** which-key
+#+begin_src elisp
+  (use-package which-key
+    :ensure t
+    :init
+    (which-key-mode 1))
+#+end_src
+
 * Version Control
 
 | [[https://github.com/magit/magit][magit]] | It's Magit! A Git porcelain inside Emacs. |
@@ -590,4 +599,15 @@
 #+begin_src elisp
   (use-package magit
     :ensure t)
+#+end_src
+
+* LaTeX
+** AUCTeX
+#+begin_src elisp
+  (use-package auctex
+    :ensure t
+    :defer t
+    :hook (LaTeX-mode . (lambda ()
+                          (push (list 'output-pdf "Zathura")
+                                TeX-view-program-selection))))
 #+end_src
