@@ -107,9 +107,8 @@
 
 * Org-mode
 
-| [[https://orgmode.org/][org-mode]]   | Your life in plain text                |
-| [[https://github.com/org-roam/org-roam][org-roam]]   | Rudimentary Roam replica with Org-mode |
-| [[https://github.com/minad/org-modern][org-modern]] | Modern Org Style                       |
+| [[https://orgmode.org/][org-mode]] | Your life in plain text                |
+| [[https://github.com/org-roam/org-roam][org-roam]] | Rudimentary Roam replica with Org-mode |
 
 ** Config
 #+begin_src elisp
@@ -118,6 +117,7 @@
    org-startup-folded         t
    org-src-window-setup       'current-window
    org-ellipsis               "_"
+   ;org-adapt-indentation      t
 
    ;; Babel
    org-confirm-babel-evaluate nil
@@ -133,6 +133,8 @@
    )
 
   (global-set-key (kbd "C-c o o") 'org-toggle-link-display)
+  ;(add-hook 'org-mode-hook 'org-indent-mode)
+  (add-hook 'org-mode-hook 'visual-line-mode)
 #+end_src
 
 ** org-roam
@@ -154,14 +156,6 @@
     (org-roam-db-autosync-mode)
     ;; If using org-roam-protocol
     (require 'org-roam-protocol))
-#+end_src
-
-** org-modern
-#+begin_src elisp
-  (use-package org-modern
-    :ensure t
-    :init
-    (global-org-modern-mode))
 #+end_src
 
 * File Manager
@@ -602,6 +596,9 @@
 #+end_src
 
 * LaTeX
+
+| [[https://www.gnu.org/software/auctex/][AUCTeX]] | AUCTeX – Sophisticated document creation |
+
 ** AUCTeX
 #+begin_src elisp
   (use-package auctex

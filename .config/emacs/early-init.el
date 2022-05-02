@@ -1,8 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (setq
- gc-cons-threshold                      most-positive-fixnum
- native-comp-deferred-compilation       nil
+ gc-cons-threshold                      most-positive-fixnum ; 2^61 bytes
+ gc-cons-percentage                     0.6
  package-enable-at-startup              nil
  frame-inhibit-implied-resize           t
  frame-resize-pixelwise                 t
@@ -15,7 +15,9 @@
 ;; to skip the mtime checks on every *.elc file.
 (setq load-prefer-newer noninteractive)
 
-(unless (or (daemonp) noninteractive)
+(unless (or (daemonp)
+            noninteractive
+            init-file-debug)
   (let ((old-file-name-handler-alist file-name-handler-alist))
     ;; `file-name-handler-alist' is consulted on each `require', `load' and
     ;; various path/io functions. You get a minor speed up by unsetting this.
@@ -36,11 +38,11 @@
   ;; Premature redisplays can substantially affect startup times and produce
   ;; ugly flashes of unstyled Emacs.
   (setq-default inhibit-redisplay t
-                inhibit-message   t)
+                inhibit-message t)
   (add-hook 'window-setup-hook
             (lambda ()
               (setq-default inhibit-redisplay nil
-                            inhibit-message   nil)
+                            inhibit-message nil)
               (redisplay)))
 
   ;; Site files tend to use `load-file', which emits "Loading X..." messages in
@@ -54,6 +56,9 @@
   ;; may introduce down the road.
   (define-advice startup--load-user-init-file (:before (&rest _) init-doom)
     (advice-remove #'load-file #'load-file@silence)))
+
+;;
+;;; Bootstrap
 
 ;; Contrary to what many Emacs users have in their configs, you don't need
 ;; more than this to make UTF-8 the default coding system:
