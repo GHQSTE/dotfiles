@@ -612,7 +612,7 @@
 
 * Multimedia
 
-| [[https://www.gnu.org/software/emms/][EMMS]] | The Emacs Multimedia System. |
+| [[https://www.gnu.org/software/emms/][EMMS]] | Emacs Multi-Media System. |
 
 ** EMMS
 #+begin_src elisp
