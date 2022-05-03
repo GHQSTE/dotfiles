@@ -611,6 +611,9 @@
 #+end_src
 
 * Multimedia
+
+| [[https://www.gnu.org/software/emms/][EMMS]] | The Emacs Multimedia System. |
+
 ** EMMS
 #+begin_src elisp
   (use-package emms
@@ -659,7 +662,7 @@
   (global-set-key (kbd "s-m k") 'mpd/kill-music-daemon)
 #+end_src
 
-*** Updating the database easily.
+*** Update the database easily.
 #+begin_src elisp
   (defun mpd/update-database ()
     "Updates the MPD database synchronously."
