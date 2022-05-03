@@ -582,8 +582,7 @@
 #+begin_src elisp
   (use-package which-key
     :ensure t
-    :init
-    (which-key-mode 1))
+    :config (which-key-mode 1))
 #+end_src
 
 * Version Control
