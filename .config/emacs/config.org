@@ -59,6 +59,10 @@
   (global-set-key (kbd "C-r")   'isearch-backward-regexp)
   (global-set-key (kbd "C-M-s") 'isearch-forward)
   (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+  ;; Use shift + arrowkeys to navigate between windows.
+  (when (fboundp 'windmove-default-keybindings)
+    (windmove-default-keybindings))
 #+end_src
 
 * Theme
@@ -196,7 +200,7 @@
 
 ** Custom Functions
 #+begin_src elisp
-  ;; Following window splits
+  ;; Follow window splits
   (defun split-and-follow-horizontally ()
     (interactive)
     (split-window-below)
@@ -210,9 +214,6 @@
     (balance-windows)
     (other-window 1))
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
-
-  (when (fboundp 'windmove-default-keybindings)
-    (windmove-default-keybindings))
 #+end_src
 
 ** zoom
@@ -607,4 +608,82 @@
     :hook (LaTeX-mode . (lambda ()
                           (push (list 'output-pdf "Zathura")
                                 TeX-view-program-selection))))
+#+end_src
+
+* Multimedia
+** EMMS
+#+begin_src elisp
+  (use-package emms
+    :ensure t
+    :config
+    (require 'emms-setup)
+    (require 'emms-player-mpd)
+    (emms-all) ; don't change this to values you see on stackoverflow questions if you expect emms to work
+    (setq emms-seek-seconds 5)
+    (setq emms-player-list '(emms-player-mpd))
+    (setq emms-info-functions '(emms-info-mpd))
+    (setq emms-player-mpd-server-name "localhost")
+    (setq emms-player-mpd-server-port "6600")
+    :bind
+    ("s-m p" . emms)
+    ("s-m b" . emms-smart-browse)
+    ("s-m r" . emms-player-mpd-update-all-reset-cache)
+    ("<XF86AudioPrev>" . emms-previous)
+    ("<XF86AudioNext>" . emms-next)
+    ("<XF86AudioPlay>" . emms-pause)
+    ("<XF86AudioStop>" . emms-stop))
+#+end_src
+
+** mpd
+*** Start the daemon from within emacs.
+#+begin_src elisp
+  (defun mpd/start-music-daemon ()
+    "Start MPD, connects to it and syncs the metadata cache."
+    (interactive)
+    (shell-command "mpd")
+    (mpd/update-database)
+    (emms-player-mpd-connect)
+    (emms-cache-set-from-mpd-all)
+    (message "MPD Started!"))
+  (global-set-key (kbd "s-m c") 'mpd/start-music-daemon)
+#+end_src
+
+*** Kill the daemon from within emacs.
+#+begin_src elisp
+  (defun mpd/kill-music-daemon ()
+    "Stops playback and kill the music daemon."
+    (interactive)
+    (emms-stop)
+    (call-process "killall" nil nil nil "mpd")
+    (message "MPD Killed!"))
+  (global-set-key (kbd "s-m k") 'mpd/kill-music-daemon)
+#+end_src
+
+*** Updating the database easily.
+#+begin_src elisp
+  (defun mpd/update-database ()
+    "Updates the MPD database synchronously."
+    (interactive)
+    (call-process "mpc" nil nil nil "update")
+    (message "MPD Database Updated!"))
+  (global-set-key (kbd "s-m u") 'mpd/update-database)
+#+end_src
+
+** mpc
+*** Setting the default port.
+#+begin_src elisp
+  (setq mpc-host "localhost:6600")
+#+end_src
+
+* Integration
+** Console
+*** ansi-term
+#+begin_src elisp
+  ;; Set default shell to bash
+  (defvar my-term-shell "/bin/bash")
+  (defadvice ansi-term (before force-bash)
+    (interactive (list my-term-shell)))
+  (ad-activate 'ansi-term)
+
+  (global-set-key (kbd "M-s-<return>") 'ansi-term)
 #+end_src

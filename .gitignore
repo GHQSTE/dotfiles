@@ -7,6 +7,9 @@
 .config/emacs/recentf
 .config/emacs/transient/
 .config/emacs/org-roam.db
+.config/emacs/emms/
+.config/emacs/tutorial/
+.config/emacs/games/
 
 # neovim
 .config/nvim/plugin/packer_compiled.lua
