@@ -680,6 +680,9 @@
 
 * Integration
 ** Console
+
+| [[https://www.emacswiki.org/emacs/AnsiTerm][ansi-term]] | built-in | A terminal emulator written in EmacsLisp. |
+
 *** ansi-term
 #+begin_src elisp
   ;; Set default shell to bash
