@@ -377,6 +377,7 @@
 | [[https://github.com/oantolin/orderless][orderless]]  | Emacs completion style that matches multiple regexps in any order |
 | [[https://github.com/minad/marginalia][marginalia]] | marginalia.el - Marginalia in the minibuffer                      |
 | [[https://github.com/minad/consult][consult]]    | consult.el - Consulting completing-read                           |
+| [[https://github.com/oantolin/embark][embark]]     | Embark: Emacs Mini-Buffer Actions Rooted in Keymaps               |
 
 *** vertico
 #+begin_src elisp
@@ -443,19 +444,9 @@
 
 *** marginalia
 #+begin_src elisp
-  ;; Enable richer annotations using the Marginalia package
   (use-package marginalia
     :ensure t
-    ;; Either bind `marginalia-cycle` globally or only in the minibuffer
-    :bind (("M-A" . marginalia-cycle)
-           :map minibuffer-local-map
-           ("M-A" . marginalia-cycle))
-
-    ;; The :init configuration is always executed (Not lazy!)
-    :init
-
-    ;; Must be in the :init section of use-package such that the mode gets
-    ;; enabled right away. Note that this forces loading the package.
+    :config
     (marginalia-mode))
 #+end_src
 
@@ -581,6 +572,40 @@
     ;;;; 4. locate-dominating-file
     ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
     )
+#+end_src
+
+*** embark
+#+begin_src elisp
+  (use-package embark
+    :ensure t
+
+    :bind
+    (("C-." . embark-act)         ;; pick some comfortable binding
+     ("C-;" . embark-dwim)        ;; good alternative: M-.
+     ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+
+    :init
+
+    ;; Optionally replace the key help with a completing-read interface
+    (setq prefix-help-command #'embark-prefix-help-command)
+
+    :config
+
+    ;; Hide the mode line of the Embark live/completions buffers
+    (add-to-list 'display-buffer-alist
+                 '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                   nil
+                   (window-parameters (mode-line-format . none)))))
+
+  ;; Consult users will also want the embark-consult package.
+  (use-package embark-consult
+    :ensure t
+    :after (embark consult)
+    :demand t ; only necessary if you have the hook below
+    ;; if you want to have consult previews as you move around an
+    ;; auto-updating embark collect buffer
+    :hook
+    (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
 
 * Key-bindings
