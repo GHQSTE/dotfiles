@@ -23,6 +23,7 @@
   (show-paren-mode         1)
   (line-number-mode        1)
   (column-number-mode      1)
+  (blink-cursor-mode       0)
   (electric-pair-mode      1)
   (global-subword-mode     1)          ; Iterate through CamelCase words.
   (delete-selection-mode   1)          ; Replace highlighted region when inserting text.
@@ -172,7 +173,7 @@
    dired-recursive-copies 'always
    dired-recursive-deletes 'always
    dired-kill-when-opening-new-dired-buffer t ; emacs 28.1
-   dired-listing-switches "-lAh --group-directories-first"
+   dired-listing-switches "-lAhp --group-directories-first"
    dired-dwim-target t
    )
 
@@ -214,16 +215,6 @@
     (balance-windows)
     (other-window 1))
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
-#+end_src
-
-** zoom
-#+begin_src elisp
-  (use-package zoom
-    :ensure t
-    :custom
-    (zoom-size '(0.618 . 0.618))
-    :init
-    (zoom-mode 1))
 #+end_src
 
 * Buffer(s)

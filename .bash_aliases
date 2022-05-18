@@ -6,7 +6,7 @@ alias mkdir="mkdir -p"
 # ls family
 alias ls="ls --color=auto"
 alias l="ls -A --color=auto"
-alias ll="ls -lAh --color=auto --group-directories-first"
+alias ll="ls -lAhp --color=auto --group-directories-first"
 alias s="startx \$XDG_CONFIG_HOME\/X11\/xinitrc"
 alias lsa="ls -A | wc -l"
 
