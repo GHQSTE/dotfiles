@@ -10,6 +10,7 @@
 .config/emacs/emms/
 .config/emacs/tutorial/
 .config/emacs/games/
+.config/emacs/projectile-bookmarks.eld
 
 # neovim
 .config/nvim/plugin/packer_compiled.lua
