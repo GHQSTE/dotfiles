@@ -667,9 +667,9 @@
 
 * Version Control
 
-| [[https://github.com/magit/magit][magit]] | It's Magit! A Git porcelain inside Emacs. |
+| [[https://github.com/magit/magit][Magit]] | It's Magit! A Git porcelain inside Emacs. |
 
-** magit
+** Magit
 #+begin_src elisp
   (use-package magit
     :ensure t)
@@ -687,14 +687,4 @@
     :hook (LaTeX-mode . (lambda ()
                           (push (list 'output-pdf "Zathura")
                                 TeX-view-program-selection))))
-#+end_src
-
-* Programming
-** lsp-mode
-#+begin_src elisp
-  (use-package lsp-mode
-    :ensure t
-    :init
-    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-    (setq lsp-keymap-prefix "C-c l"))
 #+end_src
