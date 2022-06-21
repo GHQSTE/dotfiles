@@ -309,10 +309,9 @@
 
 * Visualize
 
-| [[https://github.com/Malabarba/beacon][beacon]]             | Never lose your cursor again       |
-| [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]]       | Colorize color names in buffers    |
-| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode      |
-| [[https://github.com/minad/goggles][goggles]]            | goggles.el - Pulse modified region |
+| [[https://github.com/Malabarba/beacon][beacon]]             | Never lose your cursor again    |
+| [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]]       | Colorize color names in buffers |
+| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode   |
 
 ** beacon
 #+begin_src elisp
@@ -336,15 +335,6 @@
     :ensure t
     :init
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
-#+end_src
-
-** goggles
-#+begin_src elisp
-  (use-package goggles
-    :ensure t
-    :hook ((prog-mode text-mode) . goggles-mode)
-    :config
-    (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
 #+end_src
 
 * Project Management
