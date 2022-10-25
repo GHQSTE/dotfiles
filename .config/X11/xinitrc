@@ -8,10 +8,10 @@ xset r rate 275 65 &
 pipewire &
 pipewire-pulse &
 wireplumber &
-sbar &
+# sbar &
 xbanish &
 xcompmgr &
-dunst &
+# dunst &
 udiskie &
 mpd &
 mpDris2 &

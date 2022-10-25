@@ -74,6 +74,6 @@
 (push '(tool-bar-lines   . 0)         default-frame-alist)
 (push '(menu-bar-lines   . 0)         default-frame-alist)
 (push '(vertical-scroll-bars)         default-frame-alist)
-(push '(font . "JetBrains Mono-11")   default-frame-alist)
+(push '(font . "JetBrainsMono Nerd Font Mono-11") default-frame-alist)
 
 ;;; early-init.el ends here.
