@@ -12,8 +12,18 @@ set encoding=utf-8
 set wildmode=longest,list,full
 set splitbelow splitright
 
+"smart wrapping
+set wrap
+set textwidth=79
+
 " remaps - window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" leader key
+let mapleader = " "
+
+" remove highlight
+nnoremap <leader>no :noh<CR>
