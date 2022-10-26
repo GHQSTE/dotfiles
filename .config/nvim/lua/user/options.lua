@@ -3,13 +3,21 @@ local options = {
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width {default 4}
 
+  hlsearch = true,                         -- highlight all matches on previous search pattern
+  incsearch = true,
+
+  scrolloff = 8,                           -- is one of my fav
+  sidescrolloff = 8,
+
+  hidden = true,
+
   backup = false,                          -- creates a backup file
+  swapfile = false,                        -- creates a swapfile
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
-  hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
@@ -19,7 +27,6 @@ local options = {
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
-  swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
@@ -34,8 +41,6 @@ local options = {
   ruler = false,
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
-  -- scrolloff = 8,                           -- is one of my fav
-  sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   title = true,
   -- colorcolumn = "80",
