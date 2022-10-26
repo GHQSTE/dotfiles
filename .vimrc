@@ -9,7 +9,7 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
