@@ -7,9 +7,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Settings
@@ -51,3 +53,7 @@ let g:gruvbox_italic=1
 
 " goyo.vim (고요)
 map <leader>f :Goyo \| set linebreak<CR>
+
+" Detect trailing whitespace and other whitespace
+set listchars=tab:>~,nbsp:_,trail:.
+set list
