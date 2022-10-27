@@ -39,6 +39,7 @@ set cursorline
 
 " enable autocompletion:
 set wildmode=longest,list,full
+set completeopt=menuone,noselect
 
 " backspace doesn't work as expected in insert mode fix:
 set backspace=indent,eol,start
