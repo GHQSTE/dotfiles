@@ -34,7 +34,7 @@ set undodir=~/.vim/undodir undofile
 set scrolloff=8
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2
-set expandtab autoindent
+set expandtab smartindent
 set splitbelow splitright
 set cursorline
 set mouse=a
