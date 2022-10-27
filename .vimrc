@@ -30,6 +30,7 @@ set number relativenumber
 set hidden
 set hlsearch incsearch
 set noswapfile nobackup
+set undodir=~/.vim/undodir undofile
 set scrolloff=8
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2
@@ -40,6 +41,9 @@ set cursorline
 " enable autocompletion:
 set wildmode=longest,list,full
 set completeopt=menuone,noselect
+
+" stop autocommenting
+set formatoptions-=cro
 
 " backspace doesn't work as expected in insert mode fix:
 set backspace=indent,eol,start
