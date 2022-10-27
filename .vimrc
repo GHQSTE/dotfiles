@@ -79,6 +79,3 @@ nnoremap <leader>t :term<CR>
 " goyo.vim (고요)
 map <leader>g :Goyo \| set linebreak<CR>
 
-" detect trailing whitespace and other whitespace
-set listchars=tab:>~,nbsp:_,trail:.
-set list
