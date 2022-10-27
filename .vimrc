@@ -37,6 +37,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab autoindent
 set splitbelow splitright
 set cursorline
+set mouse=a
 
 " enable autocompletion:
 set wildmode=longest,list,full
