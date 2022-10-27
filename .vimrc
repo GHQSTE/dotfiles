@@ -15,6 +15,13 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
+" Colorscheme
+set background=dark
+colorscheme gruvbox
+
+" Needed for italics, only works in some terminals
+let g:gruvbox_italic=1
+
 " Settings
 syntax on
 set encoding=utf-8
@@ -28,6 +35,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab autoindent
 set wildmode=longest,list,full
 set splitbelow splitright
+set cursorline
 
 " Security options
 set nomodeline
@@ -45,15 +53,11 @@ map <C-l> <C-w>l
 " Remove highlight
 nnoremap <leader>no :noh<CR>
 
-" Colorscheme
-set background=dark
-colorscheme gruvbox
-
-"needed for italics, only works in some terminals
-let g:gruvbox_italic=1
+" Open terminal
+nnoremap <leader>t :term<CR>
 
 " goyo.vim (고요)
-map <leader>f :Goyo \| set linebreak<CR>
+map <leader>g :Goyo \| set linebreak<CR>
 
 " Detect trailing whitespace and other whitespace
 set listchars=tab:>~,nbsp:_,trail:.
