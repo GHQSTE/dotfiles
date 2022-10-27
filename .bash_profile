@@ -4,7 +4,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Default programs:
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export PAGER="less"
