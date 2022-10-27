@@ -52,8 +52,8 @@ set backspace=indent,eol,start
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
 set clipboard=unnamedplus
 
-" if you wanna yank and paste manually then uncomment the following two lines
-" and comment out the 'clipboard' variable above.
+" if you wanna yank and paste manually to and from system-clipboard then
+" uncomment the following two lines and comment out the 'clipboard' variable above.
 ""noremap <leader>y "+y
 ""noremap <leader>p "+p
 
