@@ -30,7 +30,7 @@ set number relativenumber
 set hidden
 set hlsearch incsearch
 set noswapfile nobackup
-set undodir=~/.vim/undodir undofile
+set undofile undodir=$HOME/.vim/undo
 set scrolloff=8
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2
