@@ -17,7 +17,6 @@ export XDG_STATE_HOME="$HOME"/.local/state
 # Add to PATH
 export PATH="$HOME"/.local/scripts:"$PATH"
 export PATH="$PATH":"$HOME"/.local/bin
-export PATH="$PATH":"$HOME"/.local/share/go/bin
 
 # Cleanup
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
