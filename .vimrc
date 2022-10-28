@@ -13,6 +13,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'mbbill/undotree'
 call plug#end()
 
 " colorscheme
@@ -78,3 +79,7 @@ nnoremap <leader>t :term<CR>
 
 " goyo.vim (고요)
 nnoremap <leader>g :Goyo<CR>
+
+" undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>U :UndotreeFocus<CR>
