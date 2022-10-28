@@ -29,6 +29,7 @@ alias tree="tree -Ca"
 alias v="nvim"
 alias fg="find ~/ -type f | fzy"
 alias f="find . -type f | fzy"
+alias ncmpcpp="ncmpcpp --config=~/.config/ncmpcpp/config"
 
 # Keyboard layout
 alias setus="setxkbmap us"
