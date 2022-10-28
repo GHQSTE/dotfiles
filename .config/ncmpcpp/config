@@ -19,7 +19,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-lyrics_directory = ~/.local/state/ncmpcpp/.lyrics
+#lyrics_directory = ~/.lyrics
 #
 ##### connection settings #####
 #
@@ -526,7 +526,7 @@ visualizer_type = spectrum
 #
 #search_engine_default_search_mode = 1
 #
-external_editor = nvim
+external_editor = vim
 #
 ## Note: set to yes if external editor is a console application.
 ##
