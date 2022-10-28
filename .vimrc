@@ -77,5 +77,4 @@ nnoremap <leader>no :noh<CR>
 nnoremap <leader>t :term<CR>
 
 " goyo.vim (고요)
-map <leader>g :Goyo \| set linebreak<CR>
-
+nnoremap <leader>g :Goyo<CR>
