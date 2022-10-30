@@ -678,3 +678,10 @@
                           (push (list 'output-pdf "Zathura")
                                 TeX-view-program-selection))))
 #+end_src
+
+* Distraction-free writing
+** Olivetti
+#+begin_src elisp
+  (use-package olivetti
+    :ensure t)
+#+end_src
