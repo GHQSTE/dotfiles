@@ -35,6 +35,3 @@ alias ncmpcpp="ncmpcpp --config=~/.config/ncmpcpp/config"
 alias setus="setxkbmap us"
 alias setcm="setxkbmap us -variant colemak_dh"
 
-# System
-alias update="doas pacman -Syu"
-
