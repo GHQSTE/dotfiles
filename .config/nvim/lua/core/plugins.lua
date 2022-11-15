@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use 'folke/tokyonight.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 
