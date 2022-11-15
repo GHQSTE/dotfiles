@@ -112,17 +112,7 @@
 
 * Visualize
 
-| [[https://github.com/Malabarba/beacon][beacon]]             | Never lose your cursor again    |
 | [[https://elpa.gnu.org/packages/rainbow-mode.html][rainbow-mode]]       | Colorize color names in buffers |
-| [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]] | Emacs rainbow delimiters mode   |
-
-** beacon
-#+begin_src elisp
-  (use-package beacon
-    :ensure t
-    :init
-    (beacon-mode 1))
-#+end_src
 
 ** rainbow-mode
 #+begin_src elisp
@@ -130,14 +120,6 @@
     :ensure t
     :init
     (add-hook 'prog-mode-hook 'rainbow-mode))
-#+end_src
-
-** rainbow-delimiters
-#+begin_src elisp
-  (use-package rainbow-delimiters
-    :ensure t
-    :init
-    (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 #+end_src
 
 * Org-mode
@@ -315,37 +297,9 @@
   ;; (global-set-key (kbd "M-Z") 'zzz-to-char)
 #+end_src
 
-* Project Management
-** Projectile
-#+begin_src elisp
-  (use-package projectile
-    :ensure t
-    :config
-    (projectile-mode 1)
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-#+end_src
-
 * Interface Enhancement
 
 | [[https://github.com/Wilfred/helpful][helpful]] | A better Emacs *help* buffer. |
-
-** Dashboard
-#+begin_src elisp
-  (use-package dashboard
-    :ensure t
-    :init
-    (progn
-      (setq dashboard-banner-logo-title "")
-      (setq dashboard-startup-banner "~/.config/emacs/img/dashLogo.png")
-      (setq dashboard-show-shortcuts nil)
-      (setq dashboard-items '((recents  . 5)
-                              (projects . 5)))
-      (setq dashboard-set-heading-icons t)
-      (setq dashboard-set-file-icons t)
-      )
-    :config
-    (dashboard-setup-startup-hook))
-#+end_src
 
 ** helpful
 #+begin_src elisp
@@ -661,5 +615,12 @@
 ** Olivetti
 #+begin_src elisp
   (use-package olivetti
+    :ensure t)
+#+end_src
+
+* LSP Client
+** lsp-mode
+#+begin_src elisp
+  (use-package lsp-mode
     :ensure t)
 #+end_src

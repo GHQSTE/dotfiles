@@ -5,6 +5,7 @@
  gc-cons-percentage                     0.6
  package-enable-at-startup              nil
  frame-inhibit-implied-resize           t
+ window-resize-pixelwise                t
  frame-resize-pixelwise                 t
  inhibit-startup-screen                 t
  initial-scratch-message                nil
