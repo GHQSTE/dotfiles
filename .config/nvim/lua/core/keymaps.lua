@@ -33,6 +33,10 @@ keymap('n', '<C-Down>', ':resize -2<CR>', opts)
 keymap('n', '<C-Left>', ':vertical resize +2<CR>', opts)
 keymap('n', '<C-Right>', ':vertical resize -2<CR>', opts)
 
+-- leader-O/o inserts blank line above/below
+keymap('n', '<leader>O', 'O<ESC>', opts)
+keymap('n', '<leader>o', 'o<ESC>', opts)
+
 -- navigate within insert mode
 keymap('i', '<C-h>', '<Left>', opts)
 keymap('i', '<C-j>', '<Down>', opts)
