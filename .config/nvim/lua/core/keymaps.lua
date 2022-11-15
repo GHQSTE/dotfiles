@@ -38,3 +38,5 @@ keymap('i', '<C-h>', '<Left>', opts)
 keymap('i', '<C-j>', '<Down>', opts)
 keymap('i', '<C-k>', '<Up>', opts)
 keymap('i', '<C-l>', '<Right>', opts)
+
+keymap('v', 'p', '"_dP', opts)
