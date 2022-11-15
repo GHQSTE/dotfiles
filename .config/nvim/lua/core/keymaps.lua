@@ -1,15 +1,16 @@
 local g = vim.g
 
--- Map <leader> to space
-g.mapleader = ' '
-g.maplocalleader = ' '
-
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+
+-- Map <leader> to space
+g.mapleader = ' '
+g.maplocalleader = ' '
+keymap("n", "<Space>", "", opts)
 
 -- Modes
 --   normal_mode = 'n',
