@@ -4,8 +4,6 @@ local g = vim.g
 -- disable nvim intro
 opt.shortmess:append "sI"
 
-opt.guicursor = ""
-
 -- numbers
 opt.number = true
 opt.relativenumber = true
