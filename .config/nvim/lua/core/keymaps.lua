@@ -38,10 +38,12 @@ keymap('n', '<C-Right>', ':vertical resize -2<CR>', opts)
 keymap('n', '<leader>O', 'O<ESC>', opts)
 keymap('n', '<leader>o', 'o<ESC>', opts)
 
+-- Move line up and down in NORMAL, INSERT and VISUAL modes
+-- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
+
 -- navigate within insert mode
 keymap('i', '<C-h>', '<Left>', opts)
 keymap('i', '<C-j>', '<Down>', opts)
 keymap('i', '<C-k>', '<Up>', opts)
 keymap('i', '<C-l>', '<Right>', opts)
 
-keymap('v', 'p', '"_dP', opts)
