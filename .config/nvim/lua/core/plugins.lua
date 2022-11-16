@@ -43,9 +43,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
