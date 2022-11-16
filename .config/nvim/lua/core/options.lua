@@ -31,6 +31,8 @@ opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.cursorcolumn = true
 opt.termguicolors = true
+
+-- Number of screen lines to keep above and below the cursor
 opt.scrolloff = 8
 
 opt.signcolumn = "yes"
