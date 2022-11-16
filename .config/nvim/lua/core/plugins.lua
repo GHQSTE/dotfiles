@@ -26,9 +26,9 @@ return require('packer').startup(function(use)
       require('lualine').setup()
     end
   }
-  use {
 
   -- Comment
+  use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
