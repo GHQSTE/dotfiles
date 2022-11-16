@@ -3,7 +3,7 @@
 #
 
 # Default programs:
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export PAGER="less"
@@ -30,9 +30,9 @@ export ZDOTDIR="$HOME"/.config/zsh
 export npm_config_prefix="$HOME/.local"
 
 # History
-export HISTSIZE=1000
+export HISTSIZE=10000
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export SAVEHIST=1000
+export SAVEHIST=10000
 
 # Pretty-print man(1) pages.
 export LESS_TERMCAP_mb=$'\033[1;31m'
