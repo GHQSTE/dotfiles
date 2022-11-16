@@ -13,7 +13,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 autoload -U colors && colors
 PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
 
-# Completion
+# Command completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 _comp_options+=(globdots)		# Include hidden files.
