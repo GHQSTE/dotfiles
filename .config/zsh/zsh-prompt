@@ -1,4 +1,0 @@
-# Prompt
-autoload -U colors && colors
-PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
-

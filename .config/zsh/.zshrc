@@ -1,9 +1,17 @@
-# Source
-source "$ZDOTDIR/zsh-functions"
-zsh_add_file "zsh-prompt"
-zsh_add_file "zsh-options"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-keybindings"
+#!/bin/dash
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+
+# source
+plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/options.zsh"
+plug "$HOME/.config/zsh/keybindings.zsh"
+
+# plugins
+plug "zsh-users/zsh-syntax-highlighting"
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
 
 # Completion
 autoload -Uz compinit && compinit
@@ -11,11 +19,6 @@ zstyle ':completion:*' menu select
 _comp_options+=(globdots)		# Include hidden files.
 zmodload zsh/complist
 DISABLE_UPDATE_PROMPT=true
-
-# History
-export HISTSIZE=1000
-export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export SAVEHIST=1000
 
 # Shortcut to exit shell on partial command line
 # By default, Ctrl+d will not close your shell if the command line is filled, this fixes it: 
@@ -30,18 +33,5 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none') # Disbable paste highlighting.
-
-# Pretty-print man(1) pages.
-export LESS_TERMCAP_mb=$'\033[1;31m'
-export LESS_TERMCAP_md=$'\033[1;31m'
-export LESS_TERMCAP_me=$'\033[0m'
-export LESS_TERMCAP_ue=$'\033[0m'
-export LESS_TERMCAP_so=$'\033[1;33m'
-export LESS_TERMCAP_se=$'\033[0m'
-export LESS_TERMCAP_us=$'\033[1;32m'
-
-# Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

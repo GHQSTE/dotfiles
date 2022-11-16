@@ -1,3 +1,5 @@
+#!/bin/dash
+
 bindkey -e # emacs keybindings
 
 # Key bindings

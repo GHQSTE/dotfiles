@@ -29,3 +29,17 @@ export ZDOTDIR="$HOME"/.config/zsh
 
 export npm_config_prefix="$HOME/.local"
 
+# History
+export HISTSIZE=1000
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export SAVEHIST=1000
+
+# Pretty-print man(1) pages.
+export LESS_TERMCAP_mb=$'\033[1;31m'
+export LESS_TERMCAP_md=$'\033[1;31m'
+export LESS_TERMCAP_me=$'\033[0m'
+export LESS_TERMCAP_ue=$'\033[0m'
+export LESS_TERMCAP_so=$'\033[1;33m'
+export LESS_TERMCAP_se=$'\033[0m'
+export LESS_TERMCAP_us=$'\033[1;32m'
+

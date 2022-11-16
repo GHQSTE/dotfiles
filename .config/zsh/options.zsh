@@ -1,3 +1,5 @@
+#!/bin/dash
+
 # Changing Directories
 setopt autocd cd_silent
 
