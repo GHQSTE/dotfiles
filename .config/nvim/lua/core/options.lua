@@ -1,89 +1,99 @@
-local opt = vim.opt
+local o = vim.opt
 local g = vim.g
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+o.shortmess:append 'sI'
 
 -- numbers
-opt.number = true
-opt.relativenumber = true
-opt.numberwidth = 2
-opt.ruler = false
+o.number = true
+o.relativenumber = true
+o.numberwidth = 2
+o.ruler = false
 
 -- indenting
-opt.expandtab = true
-opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+o.expandtab = true
+o.smartindent = true
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
 
 -- backup
-opt.backup = false
-opt.writebackup = false
-opt.swapfile = false
-opt.undofile = true
+o.backup = false
+o.writebackup = false
+o.swapfile = false
+o.undofile = true
 
-opt.laststatus = 3 -- global statusline
-opt.showmode = false
+o.laststatus = 3 -- global statusline
+o.showmode = false
 
-opt.title = true
-opt.clipboard = "unnamedplus"
-opt.cursorline = true
-opt.cursorcolumn = true
-opt.termguicolors = true
+o.title = true
+o.clipboard = 'unnamedplus'
+o.cursorline = true
+o.cursorcolumn = true
+o.termguicolors = true
 
 -- Number of screen lines to keep above and below the cursor
-opt.scrolloff = 8
+o.scrolloff = 8
 
-opt.signcolumn = "yes"
-opt.colorcolumn = "80"
+o.signcolumn = 'yes'
+o.colorcolumn = '80'
 
-opt.splitbelow = true
-opt.splitright = true
+o.splitbelow = true
+o.splitright = true
 
-opt.fillchars = { eob = " " }
-opt.mouse = "a"
+o.fillchars = { eob = ' ' }
+o.mouse = 'a'
 
-opt.timeoutlen = 400
+o.timeoutlen = 400
 
 -- interval for writing swap file to disk, also used by gitsigns
-opt.updatetime = 250
+o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+o.whichwrap:append '<>[]hl'
 
 -- disable some builtin vim plugins
 local default_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
+  '2html_plugin',
+  'getscript',
+  'getscriptPlugin',
+  'gzip',
+  'logipat',
+  'netrw',
+  'netrwPlugin',
+  'netrwSettings',
+  'netrwFileHandlers',
+  'matchit',
+  'tar',
+  'tarPlugin',
+  'rrhelper',
+  'spellfile_plugin',
+  'vimball',
+  'vimballPlugin',
+  'zip',
+  'zipPlugin',
+  'tutor',
+  'rplugin',
+  'syntax',
+  'synmenu',
+  'optwin',
+  'compiler',
+  'bugreport',
+  'ftplugin',
 }
 
 for _, plugin in pairs(default_plugins) do
-  g["loaded_" .. plugin] = 1
+  g['loaded_' .. plugin] = 1
 end
 
+local default_providers = {
+  'node',
+  'perl',
+  'python3',
+  'ruby',
+}
+
+for _, provider in ipairs(default_providers) do
+  vim.g['loaded_' .. provider .. '_provider'] = 0
+end
