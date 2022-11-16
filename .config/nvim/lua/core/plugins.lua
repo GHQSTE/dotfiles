@@ -14,17 +14,32 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
+
+  -- Colorscheme
   use 'folke/tokyonight.nvim'
+
+  -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
+
+  -- Comment
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
   }
+
+  -- Git
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 
