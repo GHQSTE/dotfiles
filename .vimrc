@@ -43,7 +43,6 @@ set cursorline
 
 " enable autocompletion:
 set wildmode=longest,list,full
-set completeopt=menuone,noselect
 
 " stop autocommenting
 set formatoptions-=cro

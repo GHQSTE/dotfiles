@@ -44,6 +44,10 @@ o.splitright = true
 o.fillchars = { eob = ' ' }
 o.mouse = 'a'
 
+-- Completion
+o.wildmode = { 'longest:full' }
+o.pumheight = 10
+
 o.timeoutlen = 400
 
 -- interval for writing swap file to disk, also used by gitsigns
