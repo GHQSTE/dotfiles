@@ -3,9 +3,6 @@
 # Changing Directories
 setopt autocd cd_silent
 
-# Completion
-setopt menu_complete
-
 # Expansion and Globbing
 setopt extended_glob glob_dots null_glob
 
