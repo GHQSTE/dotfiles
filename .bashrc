@@ -26,20 +26,6 @@ complete -cf doas
 # This allows you to search forwards with that same binding.
 stty stop ''
 
-# Pretty-print man(1) pages.
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-# Bash History
-export HISTCONTROL='ignoreboth:erasedups'
-export HISTFILE="$XDG_STATE_HOME"/bash/history
-export HISTFILESIZE=50000
-
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 # Use bash-completion, if available

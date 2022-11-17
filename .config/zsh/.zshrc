@@ -4,14 +4,13 @@
 # source
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/options.zsh"
-plug "$HOME/.config/zsh/keybindings.zsh"
-
-# plugins
-plug "zsh-users/zsh-syntax-highlighting"
 
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
+
+# Emacs mode
+bindkey -e
 
 # Command completion
 autoload -Uz compinit && compinit
@@ -26,7 +25,7 @@ exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
 
-# disable the underline.
+# disable the underline when changing directories with cd
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none

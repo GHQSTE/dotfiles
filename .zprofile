@@ -19,7 +19,6 @@ export PATH="$HOME"/.local/scripts:"$PATH"
 export PATH="$PATH":"$HOME"/.local/bin
 
 # Cleanup
-# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}"/wget/wgetrc

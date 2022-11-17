@@ -20,7 +20,6 @@ export PATH="$HOME"/.local/scripts:"$PATH"
 export PATH="$PATH":"$HOME"/.local/bin
 
 # Cleanup
-# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}"/wget/wgetrc
@@ -29,4 +28,18 @@ export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export ZDOTDIR="$HOME"/.config/zsh
 
 export npm_config_prefix="$HOME/.local"
+
+# Pretty-print man(1) pages.
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# Bash History
+export HISTCONTROL='ignoreboth:erasedups'
+export HISTFILE="$XDG_STATE_HOME"/bash/history
+export HISTFILESIZE=50000
 
