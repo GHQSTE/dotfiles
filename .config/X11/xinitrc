@@ -5,9 +5,6 @@ setxkbmap -option ctrl:swapcaps
 setxkbmap us -variant colemak_dh
 xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config
 xset r rate 275 65 &
-pipewire &
-pipewire-pulse &
-wireplumber &
 xbanish &
 xcompmgr &
 # dunst &
