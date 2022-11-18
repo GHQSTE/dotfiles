@@ -7,7 +7,6 @@ xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/config
 xset r rate 275 65 &
 xbanish &
 xcompmgr &
-# dunst &
 udiskie &
 mpd &
 mpDris2 &

@@ -16,6 +16,8 @@ PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
 # Emacs mode
 bindkey -e
 
+cdpath=($HOME/.dotfiles/.config)
+
 # Command completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
