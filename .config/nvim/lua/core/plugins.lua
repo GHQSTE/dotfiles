@@ -17,6 +17,13 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use 'folke/tokyonight.nvim'
+  use 'ellisonleao/gruvbox.nvim'
+
+  -- Syntax
+  use 'nvim-treesitter/nvim-treesitter'
+
+  -- indent
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Statusline
   use {
