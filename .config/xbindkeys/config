@@ -29,14 +29,6 @@
 "slock"
   Mod5 + Return
 
-# tmpclip
-"tmpclip"
-  Mod5 + t
-
-# dclip 
-"dclip"
-  Mod5 + d
-
 # Media Controls
 "playerctl play-pause"
   Mod5 + p
