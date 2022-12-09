@@ -19,9 +19,6 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
 
-  -- Syntax
-  use 'nvim-treesitter/nvim-treesitter'
-
   -- indent
   use 'lukas-reineke/indent-blankline.nvim'
 

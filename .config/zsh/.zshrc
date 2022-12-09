@@ -6,8 +6,8 @@ plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/options.zsh"
 
 # plugins
-plug "zsh-users/zsh-autosuggestions"
-plug "zsh-users/zsh-syntax-highlighting"
+# plug "zsh-users/zsh-autosuggestions"
+# plug "zsh-users/zsh-syntax-highlighting"
 
 # Enable colors and change prompt:
 autoload -U colors && colors
