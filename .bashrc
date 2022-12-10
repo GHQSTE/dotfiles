@@ -20,8 +20,6 @@ set -o emacs
 
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 
-complete -cf doas
-
 # Disable the ability to use Ctrl + S to stop the terminal output.
 # This allows you to search forwards with that same binding.
 stty stop ''

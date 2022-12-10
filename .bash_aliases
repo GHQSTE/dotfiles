@@ -35,3 +35,5 @@ alias ncmpcpp="ncmpcpp --config=~/.config/ncmpcpp/config"
 alias setus="setxkbmap us"
 alias setcm="setxkbmap us -variant colemak_dh"
 
+# Make mount command output pretty and human readable format
+alias mount="mount | column -t"

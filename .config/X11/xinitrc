@@ -8,7 +8,6 @@ xset r rate 275 65 &
 xbanish &
 xcompmgr &
 mpd &
-mpDris2 &
 flameshot &
 udiskie &
 exec dwm

@@ -7,6 +7,9 @@
 "flameshot gui"
   Shift+Mod4 + s
 
+"maim --select | xclip -selection clipboard -t image/png"
+  Shift+Mod4 + t
+
 # wallpaper
 "setwall"
   Mod4 + w
@@ -28,10 +31,6 @@
 # slock
 "slock"
   Mod5 + Return
-
-# Media Controls
-"playerctl play-pause"
-  Mod5 + p
 
 ###########################
 # xbindkeys configuration #
