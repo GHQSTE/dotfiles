@@ -14,8 +14,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'jdhao/better-escape.vim'
 call plug#end()
 
 " colorscheme
@@ -39,7 +38,7 @@ set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab smartindent
 set splitbelow splitright
-set cursorline
+set cursorline cursorcolumn
 
 " enable autocompletion:
 set wildmode=longest,list,full
