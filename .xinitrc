@@ -10,4 +10,4 @@ xcompmgr &
 mpd &
 flameshot &
 udiskie &
-exec dwm
+exec dwm > /dev/null 2>&1
