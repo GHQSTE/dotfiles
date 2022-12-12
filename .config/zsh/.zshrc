@@ -1,4 +1,3 @@
-#!/bin/dash
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # source
@@ -19,7 +18,8 @@ bindkey -e
 cdpath=($HOME/.dotfiles/.config)
 
 # Command completion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit
 zstyle ':completion:*' menu select
 _comp_options+=(globdots)		# Include hidden files.
 zmodload zsh/complist
