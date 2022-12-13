@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
 
+  -- make neovim faster
+  use 'lewis6991/impatient.nvim'
+
   -- Colorscheme
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
@@ -31,11 +34,11 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Comment
+  -- commenting
   use {
-    'numToStr/Comment.nvim',
+    'terrortylor/nvim-comment',
     config = function()
-      require('Comment').setup()
+      require('nvim_comment').setup()
     end
   }
 
