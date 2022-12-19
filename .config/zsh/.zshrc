@@ -10,7 +10,7 @@ plug "$HOME/.config/zsh/options.zsh"
 
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%F{yellow}%~%f%b"$'\n'"%B%F{black}$%f%b "
+PS1="%B%F{blue}%~%f%b"$'\n'"%B%F{white}$%f%b "
 
 # Emacs mode
 bindkey -e

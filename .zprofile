@@ -4,7 +4,7 @@
 
 # Default programs:
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="foot"
 export BROWSER="firefox"
 export PAGER="less"
 
