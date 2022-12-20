@@ -10,3 +10,4 @@ export PATH
 export XKB_DEFAULT_LAYOUT="us"
 export XKB_DEFAULT_VARIANT="colemak_dh"
 export XKB_DEFAULT_OPTIONS="ctrl:swapcaps"
+. "$HOME/.cargo/env"
