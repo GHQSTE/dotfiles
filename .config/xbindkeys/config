@@ -25,7 +25,7 @@
 "dmenu_run"
   Mod4 + semicolon
 
-"st"
+"kitty"
   Shift+Mod4 + Return
 
 # slock
