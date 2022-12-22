@@ -37,3 +37,7 @@ export LESS_TERMCAP_so=$'\033[1;33m'
 export LESS_TERMCAP_se=$'\033[0m'
 export LESS_TERMCAP_us=$'\033[1;32m'
 
+# riverwm
+# Reference -> https://unix.stackexchange.com/questions/656328/libseat-backend-seatd-c70-could-not-connect-to-socket-run-seatd-sock-no-su
+#           -> https://www.reddit.com/r/voidlinux/comments/mor7n5/getting_libseat_errors_when_starting_sway/
+export LIBSEAT_BACKEND=logind
