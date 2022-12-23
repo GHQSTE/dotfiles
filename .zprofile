@@ -24,9 +24,9 @@ export ZDOTDIR="$HOME"/.config/zsh
 export npm_config_prefix="$HOME/.local"
 
 # History
-export HISTSIZE=10000
+export HISTSIZE=500000
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export SAVEHIST=10000
+export SAVEHIST=500000
 
 # Pretty-print man(1) pages.
 export LESS_TERMCAP_mb=$'\033[1;31m'
