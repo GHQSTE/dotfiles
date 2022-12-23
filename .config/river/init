@@ -14,6 +14,7 @@
 riverctl spawn 'wlr-randr --output HDMI-A-1 --mode 1920x1080@120'
 riverctl spawn /usr/bin/polkit-dumb-agent
 riverctl spawn mako
+riverctl spawn mpd
 
 # bemenu
 riverctl map normal Super semicolon spawn 'bemenu-run -p Run:'
