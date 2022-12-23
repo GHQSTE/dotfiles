@@ -10,8 +10,13 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-riverctl spawn "wlr-randr --output HDMI-A-1 --mode 1920x1080@120"
-riverctl focus-follows-cursor normal
+# Autostart
+riverctl spawn 'wlr-randr --output HDMI-A-1 --mode 1920x1080@120'
+riverctl spawn /usr/bin/polkit-dumb-agent
+riverctl spawn mako
+
+# bemenu
+riverctl map normal Super semicolon spawn 'bemenu-run -p Run:'
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn foot
@@ -152,6 +157,7 @@ riverctl border-color-unfocused 0x586e75
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
+riverctl focus-follows-cursor normal
 
 # Make certain views start floating
 riverctl float-filter-add app-id float
