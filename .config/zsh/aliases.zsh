@@ -20,3 +20,9 @@ alias ncmpcpp="ncmpcpp --config=~/.config/ncmpcpp/config"
 
 # Make mount command output pretty and human readable format
 alias mount="mount | column -t"
+
+alias df='df -h -x devtmpfs -x tmpfs -x usbfs -x loop'
+alias free='free -m -h'
+
+# Quickly see the hogger in the directory
+alias dust='du -hd1 | sort -hr | sed "s/.\///g" | sed "/\.$/d"'
