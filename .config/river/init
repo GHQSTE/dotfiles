@@ -10,18 +10,13 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-# Autostart
-riverctl spawn 'wlr-randr --output HDMI-A-1 --mode 1920x1080@120'
-riverctl spawn /usr/bin/polkit-dumb-agent
-riverctl spawn mako
-riverctl spawn mpd
-riverctl spawn 'swww init'
+bash $HOME/.config/river/process.sh
 
 # set wallpaper
 riverctl map normal Super W spawn setwall
 
 # bemenu
-riverctl map normal Super semicolon spawn 'bemenu-run -p Run:'
+riverctl map normal Super semicolon spawn 'bemenu-run -i -p Run:'
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn foot
