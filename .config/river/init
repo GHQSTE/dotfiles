@@ -15,6 +15,10 @@ riverctl spawn 'wlr-randr --output HDMI-A-1 --mode 1920x1080@120'
 riverctl spawn /usr/bin/polkit-dumb-agent
 riverctl spawn mako
 riverctl spawn mpd
+riverctl spawn 'wbg ~/Pictures/wallpapers/random/the-road-to-samarkand-by-thomas-thiemeyer.png'
+
+# wbg
+riverctl map normal Super W spawn setwall
 
 # bemenu
 riverctl map normal Super semicolon spawn 'bemenu-run -p Run:'
