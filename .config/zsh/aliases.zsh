@@ -1,4 +1,4 @@
-alias rm="rm -iv"
+alias rm="rm -i"
 alias cp="cp -iv"
 alias mv="mv -i"
 alias mkdir="mkdir -pv"
