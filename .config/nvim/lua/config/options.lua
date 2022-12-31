@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
--- disable nvim intro
+-- Disable nvim intro
 o.shortmess:append 'sI'
 
 g.mapleader = ' '
@@ -37,7 +37,9 @@ o.termguicolors = true
 
 -- Number of screen lines to keep above and below the cursor
 o.scrolloff = 8
+o.sidescrolloff = 8 -- Columns of context
 
+o.wrap = false -- Disable line wrap
 o.signcolumn = 'yes'
 o.colorcolumn = '80'
 
