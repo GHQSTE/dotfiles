@@ -4,6 +4,9 @@ local g = vim.g
 -- disable nvim intro
 o.shortmess:append 'sI'
 
+g.mapleader = ' '
+g.maplocalleader = ' '
+
 -- numbers
 o.number = true
 o.relativenumber = true
@@ -13,9 +16,9 @@ o.ruler = false
 -- indenting
 o.expandtab = true
 o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
 
 -- backup
 o.backup = false
@@ -42,10 +45,12 @@ o.splitbelow = true
 o.splitright = true
 
 o.fillchars = { eob = ' ' }
+o.list = true -- Show some invisible characters (tabs...
 o.mouse = 'a'
 
 -- Completion
-o.wildmode = { 'longest:full' }
+o.wildmode = 'longest:full,full' -- Command-line completion mode
+o.completeopt = 'menu,menuone,noselect'
 o.pumheight = 10
 
 o.timeoutlen = 400
@@ -57,47 +62,3 @@ o.updatetime = 50
 -- when cursor reaches end/beginning of line
 o.whichwrap:append '<>[]hl'
 
--- disable some builtin vim plugins
-local default_plugins = {
-  '2html_plugin',
-  'getscript',
-  'getscriptPlugin',
-  'gzip',
-  'logipat',
-  'netrw',
-  'netrwPlugin',
-  'netrwSettings',
-  'netrwFileHandlers',
-  'matchit',
-  'tar',
-  'tarPlugin',
-  'rrhelper',
-  'spellfile_plugin',
-  'vimball',
-  'vimballPlugin',
-  'zip',
-  'zipPlugin',
-  'tutor',
-  'rplugin',
-  'syntax',
-  'synmenu',
-  'optwin',
-  'compiler',
-  'bugreport',
-  'ftplugin',
-}
-
-for _, plugin in pairs(default_plugins) do
-  g['loaded_' .. plugin] = 1
-end
-
-local default_providers = {
-  'node',
-  'perl',
-  'python3',
-  'ruby',
-}
-
-for _, provider in ipairs(default_providers) do
-  vim.g['loaded_' .. provider .. '_provider'] = 0
-end
